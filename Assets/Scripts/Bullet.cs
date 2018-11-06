@@ -16,8 +16,7 @@ namespace STG_Demo
 
         private void Start()
         {
-            Debug.Log("Start");
-            GetComponent<Rigidbody>().velocity = transform.forward * speed;
+            GetComponent<Rigidbody>().velocity = transform.forward * this.speed;
         }
     }
 }

@@ -41,11 +41,9 @@ namespace STG_Demo
         {
             if (Input.GetButton("Fire1") && Time.time > nextFire)
             {
-                Debug.Log("Fire");
                 nextFire = Time.time + fireRate;
                 foreach (Transform shotSpawn in this.shotSpawns)
                 {
-                    Debug.Log("Fire2");
                     Instantiate(this.shot, shotSpawn.position, shotSpawn.rotation);
                 }
                 // GetComponent<AudioSource>().Play();
@@ -66,8 +64,15 @@ namespace STG_Demo
             this.Move(h, v);
         }
 
+        /// <summary>
+        /// 移动自机
+        /// </summary>
+        /// <param name="h"></param>
+        /// <param name="v"></param>
         private void Move(float h, float v)
         {
+            // TODO 设置移动速度
+
             // Set the movement vector based on the axis input.
             this.movement.Set(h, 0f, v);
 
