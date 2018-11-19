@@ -9,7 +9,7 @@ namespace STG_Demo
         /// <summary>
         /// 移动速度
         /// </summary>
-        public float moveSpeed = 2;
+        public float moveSpeed = 10;
 
         /// <summary>
         /// 子弹的prefab
@@ -81,6 +81,19 @@ namespace STG_Demo
 
             // Move the player to it's current position plus the movement.
             this.playerRigidbody.MovePosition(transform.position + movement);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Enemy Bullet"))
+            {
+                // TODO 被敌人的子弹击中
+                Debug.Log("被敌人的子弹击中");
+            }
         }
     }
 }

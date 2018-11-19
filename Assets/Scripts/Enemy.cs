@@ -54,5 +54,13 @@ namespace STG_Demo
                     //    break;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void OnBecameVisible()
+        {
+            Debug.Log("进入摄影机范围，可以被攻击");
+        }
     }
 }

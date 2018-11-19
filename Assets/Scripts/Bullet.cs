@@ -12,7 +12,7 @@ namespace STG_Demo
         /// <summary>
         /// 子弹的移动速度
         /// </summary>
-        public float speed = 2;
+        public float speed = 15;
 
         private void Start()
         {
