@@ -4,6 +4,7 @@ namespace STG_Demo
 {
     /// <summary>
     /// 边界
+    /// 销毁物体 避免内存泄露
     /// </summary>
     public class Boundary : MonoBehaviour
     {

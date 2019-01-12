@@ -10,6 +10,7 @@ namespace STG_Demo
     public class Enemy : MonoBehaviour
     {
         public float speed = 2;
+        public bool enable = false;
 
         // private Rigidbody enemyRigidbody;
 
@@ -24,6 +25,7 @@ namespace STG_Demo
         private void Start()
         {
             GetComponent<Rigidbody>().velocity = transform.forward * this.speed;
+            // this.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -32,35 +34,31 @@ namespace STG_Demo
         /// <param name="other"></param>
         private void OnTriggerEnter(Collider other)
         {
-            switch (other.tag)
+            if (this.enable)
             {
-                case "Player":
-                    // 撞到玩家
-                    Debug.Log("撞到玩家");
-                    // TODO 消灭玩家
-                    break;
-                case "Player Bullet":
-                    // 被玩家子弹击中
-                    Debug.Log("被玩家子弹击中");
-                    // 消灭玩家子弹
-                    Destroy(other.gameObject);
-                    // 消灭自身
-                    Destroy(this.gameObject);
-                    break;
-                    //case "Boundary":
-                    //    // 碰到边框
-                    //    Debug.Log("碰到边框");
-                    //    // TODO 消灭自身
-                    //    break;
+                switch (other.tag)
+                {
+                    case "Player":
+                        // 撞到玩家
+                        Debug.Log("撞到玩家");
+                        // TODO 消灭玩家
+                        break;
+                    case "Player Bullet":
+                        // 被玩家子弹击中
+                        Debug.Log("被玩家子弹击中");
+                        // 消灭玩家子弹
+                        Destroy(other.gameObject);
+                        // 消灭自身
+                        Destroy(this.gameObject);
+                        break;
+                        //case "Boundary":
+                        //    // 碰到边框
+                        //    Debug.Log("碰到边框");
+                        //    // TODO 消灭自身
+                        //    break;
+                }
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private void OnBecameVisible()
-        {
-            Debug.Log("进入摄影机范围，可以被攻击");
-        }
     }
 }
