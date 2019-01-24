@@ -9,8 +9,10 @@ namespace STG_Demo
     /// </summary>
     public class Enemy : MonoBehaviour
     {
-        public float speed = 2;
+        public float speed = 12;
         public bool enable = false;
+
+        public bool HP;
 
         // private Rigidbody enemyRigidbody;
 
@@ -24,8 +26,17 @@ namespace STG_Demo
         /// </summary>
         private void Start()
         {
-            GetComponent<Rigidbody>().velocity = transform.forward * this.speed;
+            // 移动改为使用移动脚本
+            // GetComponent<Rigidbody>().velocity = transform.forward * this.speed;
             // this.gameObject.SetActive(false);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void FixedUpdate()
+        {
+
         }
 
         /// <summary>
