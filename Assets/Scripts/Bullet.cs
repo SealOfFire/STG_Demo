@@ -14,6 +14,11 @@ namespace STG_Demo
         /// </summary>
         public float speed = 15;
 
+        /// <summary>
+        /// 子弹的威力
+        /// </summary>
+        public int damage = 1;
+
         private void Start()
         {
             GetComponent<Rigidbody>().velocity = transform.forward * this.speed;

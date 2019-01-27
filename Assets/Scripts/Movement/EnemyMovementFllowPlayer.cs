@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace STG_Demo
+namespace STG_Demo.Movement
 {
     /// <summary>
     /// 敌人移动
@@ -15,27 +15,29 @@ namespace STG_Demo
         //private UnityEngine.AI.NavMeshAgent nav;
         // Start is called before the first frame update
 
+        private Rigidbody rb;
         private Enemy enemy;
         private float targetZ;
         private float targetX;
 
         private bool follow = true;
 
-        private void Start()
-        {
-
-        }
-
         private void Awake()
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            this.rb = this.GetComponent<Rigidbody>();
+            this.player = GameObject.FindGameObjectWithTag("Player").transform;
+            this.enemy = this.gameObject.GetComponent<Enemy>();
             //playerHealth = player.GetComponent<PlayerHealth>();
             //enemyHealth = GetComponent<EnemyHealth>();
             //nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-
-            // 朝向玩家移动
-            enemy = this.gameObject.GetComponent<Enemy>();
         }
+
+        private void Start()
+        {
+           
+        }
+
+      
 
         // Update is called once per frame
         private void Update()

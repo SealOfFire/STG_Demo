@@ -21,6 +21,11 @@ namespace STG_Demo
         /// </summary>
         public Transform[] shotSpawns;
 
+        /// <summary>
+        /// 武器威力等级
+        /// </summary>
+        public int PowerLevel = 1;
+
         private Rigidbody playerRigidbody;
         private Vector3 movement; // The vector to store the direction of the player's movement.
         public float fireRate; // 每次射击的间隔
@@ -65,6 +70,19 @@ namespace STG_Demo
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Enemy Bullet"))
+            {
+                // TODO 被敌人的子弹击中
+                Debug.Log("被敌人的子弹击中");
+            }
+        }
+
+        /// <summary>
         /// 移动自机
         /// </summary>
         /// <param name="h"></param>
@@ -84,16 +102,12 @@ namespace STG_Demo
         }
 
         /// <summary>
-        /// 
+        /// 武器威力提升
         /// </summary>
-        /// <param name="other"></param>
-        private void OnTriggerEnter(Collider other)
+        public void PowerUp(int level)
         {
-            if (other.CompareTag("Enemy Bullet"))
-            {
-                // TODO 被敌人的子弹击中
-                Debug.Log("被敌人的子弹击中");
-            }
+            this.PowerLevel += level;
+            Debug.Log("PowerUp:" + this.PowerLevel);
         }
     }
 }

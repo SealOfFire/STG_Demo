@@ -14,6 +14,8 @@ namespace STG_Demo
 
         public bool HP;
 
+        public Health health;
+
         // private Rigidbody enemyRigidbody;
 
         private void Awake()
@@ -26,6 +28,7 @@ namespace STG_Demo
         /// </summary>
         private void Start()
         {
+            this.health = GetComponent<Health>();
             // 移动改为使用移动脚本
             // GetComponent<Rigidbody>().velocity = transform.forward * this.speed;
             // this.gameObject.SetActive(false);
@@ -59,8 +62,12 @@ namespace STG_Demo
                         Debug.Log("被玩家子弹击中");
                         // 消灭玩家子弹
                         Destroy(other.gameObject);
+
+                        // 获取子弹威力
+                        Bullet bullet = other.gameObject.GetComponent<Bullet>();
+                        this.health.TakeDamage(bullet.damage);
                         // 消灭自身
-                        Destroy(this.gameObject);
+                        // Destroy(this.gameObject);
                         break;
                         //case "Boundary":
                         //    // 碰到边框

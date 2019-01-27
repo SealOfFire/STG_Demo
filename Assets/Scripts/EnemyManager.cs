@@ -10,7 +10,7 @@ namespace STG_Demo
     public class EnemyManager : MonoBehaviour
     {
         // public PlayerHealth playerHealth;
-        public GameObject enemy;
+        public GameObject[] enemys;
         public float spawnTime = 10f;
         public Transform[] spawnPoints;
 
@@ -62,6 +62,7 @@ namespace STG_Demo
         private void SecondWave()
         {
             Debug.Log("创建第2波敌人");
+            Instantiate(this.enemys[1], this.spawnPoints[2].position, this.spawnPoints[2].rotation);
         }
 
         /// <summary>
@@ -84,11 +85,8 @@ namespace STG_Demo
         // Update is called once per frame
         private void Spawn()
         {
-
-            foreach (Transform spawnPoint in spawnPoints)
-            {
-                Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-            }
+            Instantiate(enemys[0], spawnPoints[0].position, spawnPoints[0].rotation);
+            Instantiate(enemys[0], spawnPoints[1].position, spawnPoints[1].rotation);
         }
     }
 }
