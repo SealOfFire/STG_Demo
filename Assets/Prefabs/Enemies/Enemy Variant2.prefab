@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 1586818936145660511, guid: 016d197bda37c4040b25f3f5fdb7b6b9,
         type: 3}
       propertyPath: startingHealth
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4956006742060202, guid: 016d197bda37c4040b25f3f5fdb7b6b9, type: 3}
       propertyPath: m_LocalPosition.x

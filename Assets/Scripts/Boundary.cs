@@ -15,6 +15,7 @@ namespace STG_Demo
         private void OnTriggerExit(Collider other)
         {
             // 摧毁离开边界的物体
+            Debug.Log("离开边界:" + other.tag);
             Destroy(other.gameObject);
         }
     }
