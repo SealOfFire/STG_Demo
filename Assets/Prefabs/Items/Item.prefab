@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intervalTime: {x: 2, y: 8}
   stayTime: 20
-  speed: 5
+  speed: 8
 --- !u!54 &4901380256402187361
 Rigidbody:
   m_ObjectHideFlags: 0

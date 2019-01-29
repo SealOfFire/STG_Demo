@@ -22,7 +22,7 @@ namespace STG_Demo.Movement
         /// <summary>
         /// 移动速度
         /// </summary>
-        public float speed = 5;
+        public float speed = 8;
 
         private Rigidbody rb;
         private float totalTime;
