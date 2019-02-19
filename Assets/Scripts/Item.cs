@@ -16,6 +16,7 @@ namespace STG_Demo
         /// 
         /// </summary>
         /// <param name="other"></param>
+        /*
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
@@ -29,6 +30,7 @@ namespace STG_Demo
                 Destroy(this.gameObject);
             }
         }
+        */
 
     }
 }

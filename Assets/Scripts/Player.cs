@@ -73,6 +73,7 @@ namespace STG_Demo
         /// 
         /// </summary>
         /// <param name="other"></param>
+        /*
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Enemy Bullet"))
@@ -81,6 +82,7 @@ namespace STG_Demo
                 Debug.Log("被敌人的子弹击中");
             }
         }
+        */
 
         /// <summary>
         /// 移动自机
